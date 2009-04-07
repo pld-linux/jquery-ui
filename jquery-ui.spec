@@ -1,11 +1,11 @@
 Summary:	jQuery UI
 Name:		jquery-ui
-Version:	1.5.3
+Version:	1.7.1
 Release:	0.1
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
-# Source0-md5:	5fc1bdd91953e975411de0623e4b0302
+# Source0-md5:	4378e0d5d84011998b8d4c46ad20f27f
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) > 1.268
 Source1:	%{name}-find-lang.sh
@@ -38,12 +38,16 @@ Demonstrations and samples for %{name}.
 
 find '(' -name '*.js' -o -name '*.html' ')' -print0 | xargs -0 %{__sed} -i -e 's,\r$,,'
 
+find ui/minified -name '*.min.js' | while read a; do
+	mv $a ${a%.min.js}.js
+done
+
 install %{SOURCE1} find-lang.sh
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_appdir},%{_examplesdir}/%{name}-%{version}}
-cp -a ui/* $RPM_BUILD_ROOT%{_appdir}
+cp -a ui/minified/* $RPM_BUILD_ROOT%{_appdir}
 cp -a demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 ./find-lang.sh %{name}.lang
@@ -53,10 +57,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc AUTHORS.txt
 %dir %{_appdir}
-%{_appdir}/*.js
-%{_appdir}/packed
-%{_appdir}/minified
+%{_appdir}/ui.*.js
+%{_appdir}/effects.*.js
+
+# bundle of all effects
+%{_appdir}/jquery-ui.js
+# bundle of all languages
+%{_appdir}/i18n/jquery-ui-i18n.js
 
 %files demo
 %defattr(644,root,root,755)

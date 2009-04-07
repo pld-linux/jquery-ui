@@ -11,7 +11,7 @@ echo '%defattr(644,root,root,755)' > $langfile
 while read dir; do
 	echo "%dir ${dir#$RPM_BUILD_ROOT}" >> $langfile
 
-	for f in $dir/??*.js; do
+	for f in $dir/ui.datepicker-*.js; do
 		lang=${f##*/ui.datepicker-}
 		lang=${lang%.*}
 		dir=${f#$RPM_BUILD_ROOT}
@@ -39,6 +39,9 @@ while read dir; do
 		;;
 		zh-TW)
 			lang=zh_TW
+		;;
+		sr-SR)
+			lang=sr
 		;;
 		*-*)
 			echo >&2 "ERROR: Need mapping for $lang!"
