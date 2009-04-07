@@ -9,7 +9,7 @@ Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) > 1.268
 Source1:	%{name}-find-lang.sh
-Requires:	jquery >= 1.2.6
+Requires:	jquery >= 1.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
