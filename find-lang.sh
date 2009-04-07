@@ -11,14 +11,6 @@ echo '%defattr(644,root,root,755)' > $langfile
 while read dir; do
 	echo "%dir ${dir#$RPM_BUILD_ROOT}" >> $langfile
 
-	+ ./find-lang.sh jquery-ui.lang
-	+ lang=ui.datepicker-ar.js
-	+ lang=ui.datepicker-ar
-	+ dir=/usr/share/jquery/ui/i18n/ui.datepicker-ar.js
-	+ echo ERROR: Need mapping for ui.datepicker-ar!
-	+ >&2
-
-set -x
 	for f in $dir/??*.js; do
 		lang=${f##*/ui.datepicker-}
 		lang=${lang%.*}
