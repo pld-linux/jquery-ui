@@ -1,14 +1,14 @@
 Summary:	jQuery UI
 Name:		jquery-ui
-Version:	1.7.1
+Version:	1.7.2
 Release:	0.1
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
-# Source0-md5:	4378e0d5d84011998b8d4c46ad20f27f
+# Source0-md5:	ac7986a8caedf11c4392ad4964c5d5af
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) > 1.268
-Source1:	%{name}-find-lang.sh
+Source1:	find-lang.sh
 Requires:	jquery >= 1.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -17,6 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_webapp		%{name}
 %define		_sysconfdir	%{_webapps}/%{_webapp}
 %define		_appdir		%{_datadir}/jquery/ui
+
+%define		find_lang 	sh %{SOURCE1} %{buildroot}
 
 %description
 jQuery UI provides abstractions for low-level interaction and
@@ -42,15 +44,13 @@ find ui/minified -name '*.min.js' | while read a; do
 	mv $a ${a%.min.js}.js
 done
 
-install %{SOURCE1} find-lang.sh
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_appdir},%{_examplesdir}/%{name}-%{version}}
 cp -a ui/minified/* $RPM_BUILD_ROOT%{_appdir}
 cp -a demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-./find-lang.sh %{name}.lang
+%find_lang %{name}.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
