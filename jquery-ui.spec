@@ -8,6 +8,7 @@ Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
 # Source0-md5:	ac7986a8caedf11c4392ad4964c5d5af
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) > 1.268
+BuildRequires:	unzip
 Source1:	find-lang.sh
 Requires:	jquery >= 1.3
 BuildArch:	noarch
