@@ -1,11 +1,11 @@
 Summary:	jQuery UI
 Name:		jquery-ui
-Version:	1.7.2
-Release:	2
+Version:	1.7.3
+Release:	1
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
-# Source0-md5:	ac7986a8caedf11c4392ad4964c5d5af
+# Source0-md5:	0548ede8bbf20f811dd8eb1f9a727142
 Source1:	find-lang.sh
 Source2:	ui.datepicker-et.js
 URL:		http://jqueryui.com/
