@@ -16,8 +16,8 @@ echo '%defattr(644,root,root,755)' > $langfile
 while read dir; do
 	echo "%dir ${dir#$RPM_BUILD_ROOT}" >> $langfile
 
-	for f in $dir/ui.datepicker-*.js; do
-		lang=${f##*/ui.datepicker-}
+	for f in $dir/jquery.ui.datepicker-*.js; do
+		lang=${f##*/jquery.ui.datepicker-}
 		lang=${lang%.*}
 		dir=${f#$RPM_BUILD_ROOT}
 		case "$lang" in
@@ -27,11 +27,17 @@ while read dir; do
 		en-ca)
 			lang=en_CA
 		;;
+		en-GB)
+			lang=en_GB
+		;;
 		en-uk)
 			lang=en_UK
 		;;
 		fr-ca)
 			lang=fr_CA
+		;;
+		fr-CH)
+			lang=fr_CH
 		;;
 		pt-BR)
 			lang=pt_BR
@@ -44,6 +50,9 @@ while read dir; do
 		;;
 		zh-TW)
 			lang=zh_TW
+		;;
+		zh-HK)
+			lang=zh_HK
 		;;
 		sr-SR)
 			lang=sr
