@@ -1,7 +1,7 @@
 Summary:	jQuery UI
 Name:		jquery-ui
 Version:	1.7.2
-Release:	0.1
+Release:	1
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
@@ -49,6 +49,7 @@ done
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_appdir},%{_examplesdir}/%{name}-%{version}}
 cp -a ui/minified/* $RPM_BUILD_ROOT%{_appdir}
+cp -a themes $RPM_BUILD_ROOT%{_appdir}
 cp -a demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %find_lang %{name}.lang
@@ -62,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_appdir}
 %{_appdir}/ui.*.js
 %{_appdir}/effects.*.js
+%{_appdir}/themes
 
 # bundle of all effects
 %{_appdir}/jquery-ui.js
