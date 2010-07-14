@@ -1,15 +1,16 @@
 Summary:	jQuery UI
 Name:		jquery-ui
 Version:	1.7.2
-Release:	1
+Release:	2
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
 # Source0-md5:	ac7986a8caedf11c4392ad4964c5d5af
+Source1:	find-lang.sh
+Source2:	ui.datepicker-et.js
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	unzip
-Source1:	find-lang.sh
 Requires:	jquery >= 1.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,6 +41,9 @@ Demonstrations and samples for %{name}.
 %setup -q
 
 find '(' -name '*.js' -o -name '*.html' ')' -print0 | xargs -0 %{__sed} -i -e 's,\r$,,'
+
+cp -a %{SOURCE2} ui/i18n/ui.datepicker-et.js
+cp -a %{SOURCE2} ui/minified/i18n/ui.datepicker-et.js
 
 find ui/minified -name '*.min.js' | while read a; do
 	mv $a ${a%.min.js}.js
