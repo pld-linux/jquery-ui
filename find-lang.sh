@@ -21,7 +21,10 @@ while read dir; do
 		lang=${lang%.*}
 		dir=${f#$RPM_BUILD_ROOT}
 		case "$lang" in
-		en-au)
+		ar-DZ)
+			lang=ar_DZ
+		;;
+		en-au|en-AU)
 			lang=en_AU
 		;;
 		en-ca)
@@ -29,6 +32,9 @@ while read dir; do
 		;;
 		en-GB)
 			lang=en_GB
+		;;
+		en-NZ)
+			lang=en_NZ
 		;;
 		en-uk)
 			lang=en_UK
