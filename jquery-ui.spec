@@ -1,11 +1,11 @@
 Summary:	jQuery UI
 Name:		jquery-ui
-Version:	1.8.9
+Version:	1.8.16
 Release:	1
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
-# Source0-md5:	272cecad13cdb9ee404f8a78642fbfe0
+# Source0-md5:	8bed4e09aace0223bcc695bbd1b2b86a
 Source1:	find-lang.sh
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) >= 1.553
@@ -28,13 +28,13 @@ Library, that you can use to build highly interactive web
 applications.
 
 %package demo
-Summary:	Demo for %{name}
-Summary(pl.UTF-8):	Pliki demonstracyjne dla pakietu %{name}
+Summary:	Demo for jQuery UI
+Summary(pl.UTF-8):	Pliki demonstracyjne dla pakietu jQuery UI
 Group:		Development
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description demo
-Demonstrations and samples for %{name}.
+Demonstrations and samples for jQuery UI.
 
 %prep
 %setup -q
