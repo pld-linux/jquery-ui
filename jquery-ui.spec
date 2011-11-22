@@ -36,6 +36,25 @@ Requires:	%{name} = %{version}-%{release}
 %description demo
 Demonstrations and samples for jQuery UI.
 
+%package doc
+Summary:	Manual for jQuery UI.
+Summary(fr.UTF-8):	Documentation pour jQuery UI
+Summary(it.UTF-8):	Documentazione di jQuery UI
+Summary(pl.UTF-8):	Podręcznik dla jQuery UI
+Group:		Documentation
+
+%description doc
+Documentation for jQuery UI.
+
+%description doc -l fr.UTF-8
+Documentation pour jQuery UI.
+
+%description doc -l it.UTF-8
+Documentazione di jQuery UI.
+
+%description doc -l pl.UTF-8
+Dokumentacja do jQuery UI.
+
 %prep
 %setup -q
 %undos -f js,css,html
@@ -72,3 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %files demo
 %defattr(644,root,root,755)
 %{_examplesdir}/%{name}-%{version}
+
+%files doc
+%doc docs/*
