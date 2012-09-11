@@ -1,11 +1,11 @@
 Summary:	jQuery UI
 Name:		jquery-ui
-Version:	1.8.16
+Version:	1.8.23
 Release:	1
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
-# Source0-md5:	8bed4e09aace0223bcc695bbd1b2b86a
+# Source0-md5:	90086cb63268d343d04d641c36a1bbc6
 Source1:	find-lang.sh
 URL:		http://jqueryui.com/
 BuildRequires:	rpmbuild(macros) >= 1.553

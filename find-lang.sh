@@ -45,6 +45,9 @@ while read dir; do
 		fr-CH)
 			lang=fr_CH
 		;;
+		nl-BE)
+			lang=nl_BE
+		;;
 		pt-BR)
 			lang=pt_BR
 		;;
@@ -62,6 +65,9 @@ while read dir; do
 		;;
 		sr-SR)
 			lang=sr
+		;;
+		cy-GB)
+			lang=cy
 		;;
 		*-*)
 			echo >&2 "ERROR: Need mapping for $lang!"
