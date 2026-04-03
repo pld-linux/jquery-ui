@@ -1,7 +1,7 @@
 Summary:	jQuery UI
 Name:		jquery-ui
 Version:	1.8.24
-Release:	1
+Release:	2
 License:	MIT / GPL
 Group:		Applications/WWW
 Source0:	http://jquery-ui.googlecode.com/files/%{name}-%{version}.zip
